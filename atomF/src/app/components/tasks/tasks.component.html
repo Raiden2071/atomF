@@ -1,0 +1,15 @@
+<div class="task-container mt-5">
+  <div class="task" *ngFor="let task of sortTasks()" (click)="task.done = !task.done"
+    [ngClass]="task.done ? 'done' : 'not-done'">
+    <div>
+      <div class="status" (click)="task.done = !task.done" [ngClass]="task.done ? 'done' : 'not-done'"></div>
+    </div>
+    <div class="title">{{task.name}}</div>
+    <div class="prioruty">{{task.priority}}</div>
+    <div class="estimation">{{task.estimation}} hours</div>
+    <div class="asignee">assigned to <b>{{task.assignee}}</b></div>
+    <div>
+      <button class="btm btn-danger btn-sm" (click)="deleteTask(task)">-</button>
+    </div>
+  </div>
+</div>
